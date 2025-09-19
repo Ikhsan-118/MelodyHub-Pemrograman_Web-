@@ -1,94 +1,194 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MelodyHub — Beranda</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="MelodyHub — Web Musik Kalcer. Temukan playlist, artis, dan lagu favorit." />
 </head>
 <body>
-  <header>
-    <h1>🎵 MelodyHub</h1>
-    <p>Web Musik Kalcer — Temukan lagu favoritmu</p>
-    <nav aria-label="Utama">
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="browse.html">Browse</a></li>
-        <li><a href="search.html">Cari</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="artist.html">Artis</a></li>
-      </ul>
-    </nav>
-    <hr>
-  </header>
+  <div class="app" role="application">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Navigasi Utama">
+      <div class="brand" id="brand">
+        <div class="logo" aria-hidden="true">M</div>
+        <div>
+          <h1>MelodyHub</h1>
+          <div class="small">Web Musik Kalcer</div>
+        </div>
+      </div>
 
-  <aside aria-label="Sidebar">
-    <h2>Menu</h2>
-    <nav>
-      <ul>
-        <li><a href="index.html">For You</a></li>
-        <li><a href="browse.html">Genre</a></li>
-        <li><a href="playlist.html">Playlist Saya</a></li>
-        <li><a href="search.html">Cari Lagu</a></li>
-      </ul>
-    </nav>
-  </aside>
+      <nav class="side-nav" aria-label="Menu Utama">
+        <ul>
+          <li><a href="index.html" aria-current="page">Beranda</a></li>
+          <li><a href="pages/browse.html">Browse</a></li>
+          <li><a href="pages/search.html">Cari</a></li>
+          <li><a href="pages/playlist.html">Playlist</a></li>
+          <li><a href="pages/artist.html">Artis</a></li>
+        </ul>
+      </nav>
 
-  <main>
-    <section aria-labelledby="for-you">
-      <h2 id="for-you">For You — Rekomendasi Kalcer</h2>
-      <p>Beberapa lagu yang pas untuk mood hari ini.</p>
+      <div class="collection" aria-label="Koleksi Pengguna">
+        <h4>Koleksi Kamu</h4>
+        <ul>
+          <li>#1 (4 playlist)</li>
+          <li>Kalcer Hits</li>
+          <li>Indie Mix</li>
+          <li>Favorites</li>
+        </ul>
+      </div>
+    </aside>
 
-      <article>
-        <h3>Secerca Cahaya</h3>
-        <p>Artis: Hindia — Album: Rilisan Pop</p>
-      </article>
+    <!-- MAIN CONTENT -->
+    <main role="main" aria-labelledby="main-heading">
+      <header class="topbar">
+        <div>
+          <h2 id="main-heading">For You</h2>
+          <div class="small">Rekomendasi khusus berdasarkan suasana</div>
+        </div>
 
-      <article>
-        <h3>Peluru</h3>
-        <p>Artis: Barasuara — Album: Alternatif</p>
-      </article>
+        <div class="searchbox" role="search" aria-label="Cari lagu, artis, album">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" opacity="0.7" />
+          </svg>
+          <input type="search" placeholder="Apa yang ingin kamu putar?" aria-label="Kolom pencarian">
+        </div>
+      </header>
 
-      <article>
-        <h3>Senja yang Rindu</h3>
-        <p>Artis: .feast — Single</p>
-      </article>
-    </section>
+      <section aria-labelledby="rekomendasi">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h3 id="rekomendasi">Daily Mix & Rekomendasi</h3>
+          <a href="pages/browse.html" class="small">Tampilkan semua</a>
+        </div>
 
-    <section aria-labelledby="popular">
-      <h2 id="popular">Lagu Populer Kalcer</h2>
-      <ol>
-        <li>Peluru — Barasuara</li>
-        <li>Secerca Cahaya — Hindia</li>
-        <li>Lagu Remaja — LombaSihir</li>
-        <li>Echoes — The Adams</li>
-      </ol>
-    </section>
+        <div class="cards-row" role="list" aria-label="Rekomendasi">
+          <article class="card" role="listitem">
+            <figure class="cover" aria-hidden="true">
+              <img src="assets/img/cover-discover.jpg" alt="" onerror="this.style.opacity=0.9">
+            </figure>
+            <h3>Discover Weekly</h3>
+            <p class="small">Playlist pilihan</p>
+          </article>
 
-    <section aria-labelledby="featured-artists">
-      <h2 id="featured-artists">Artis Unggulan</h2>
-      <ul>
-        <li>Hindia</li>
-        <li>.feast</li>
-        <li>LombaSihir</li>
-        <li>Barasuara</li>
-        <li>The Adams</li>
-        <li>The Jansen</li>
-      </ul>
-    </section>
-  </main>
+          <article class="card" role="listitem">
+            <figure class="cover" aria-hidden="true">
+              <img src="assets/img/_Feast_Feast.jpeg" alt="">
+            </figure>
+            <h3>Daily Mix 01</h3>
+            <p class="small">.Feast • Hindia • LombaSihir</p>
+          </article>
 
-  <footer role="contentinfo">
-    <hr>
-    <p>&copy; 2025 MelodyHub — Web Musik Kalcer</p>
+          <article class="card" role="listitem">
+            <figure class="cover" aria-hidden="true">
+              <img src="assets/img/cover-dailymix2.jpg" alt="">
+            </figure>
+            <h3>Daily Mix 02</h3>
+            <p class="small">The Adams • The Jansen • .feast</p>
+          </article>
 
-    <section aria-label="Player">
-      <h3>Sedang Diputar</h3>
-      <p><strong>Peluru</strong> — Barasuara</p>
-      <audio controls>
-        <!-- <source src="audio/peluru.mp3" type="audio/mpeg"> -->
-        Browser Anda mendukung elemen audio.
-      </audio>
-    </section>
-  </footer>
+          <article class="card" role="listitem">
+            <figure class="cover" aria-hidden="true">
+              <img src="assets/img/cover-topcharts.jpg" alt="">
+            </figure>
+            <h3>Top Kalcer</h3>
+            <p class="small">Lagu populer lokal</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="baru-diputar" style="margin-top:18px">
+        <h3 id="baru-diputar">Baru diputar</h3>
+        <div class="grid" aria-live="polite" aria-atomic="true">
+          <article class="album">
+            <figure class="cover"><img src="assets/img/peluru.jpg" alt="Peluru - Barasuara"></figure>
+            <h4>Peluru</h4>
+            <p class="small">Barasuara • Album: Matahari</p>
+          </article>
+
+          <article class="album">
+            <figure class="cover"><img src="assets/img/Doves, '25 on Blank Canvas.jpeg" alt="Secerca Cahaya - Hindia"></figure>
+            <h4>Doves, '25 on Blank Canvas</h4>
+            <p class="small">Hindia • Album</p>
+          </article>
+
+          <article class="album">
+            <figure class="cover"><img src="assets/img/Lost.jpeg" alt="Senja yang Rindu - .feast"></figure>
+            <h4>Berita Kehilangan</h4>
+            <p class="small">.Feast • Single</p>
+          </article>
+
+          <article class="album">
+            <figure class="cover"><img src="assets/img/LombaSihir.jpeg" alt="Spellbound - LombaSihir"></figure>
+            <h4>Nirrrlaba</h4>
+            <p class="small">LombaSihir • Album</p>
+          </article>
+
+          <article class="album">
+            <figure class="cover"><img src="assets/img/echoes.jpg" alt="Echoes - The Adams"></figure>
+            <h4>Echoes</h4>
+            <p class="small">The Adams • Single</p>
+          </article>
+
+          <article class="album">
+            <figure class="cover"><img src="assets/img/nightfall.jpg" alt="Nightfall - The Jansen"></figure>
+            <h4>Nightfall</h4>
+            <p class="small">The Jansen • Single</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- RIGHT PANEL: ARTIST DETAIL -->
+    <aside class="right" aria-label="Detail Artis">
+      <div class="artist-hero" role="region" aria-labelledby="artist-name">
+        <div>
+          <h2 id="artist-name">Barasuara</h2>
+          <div class="small">Band Alternatif • Indonesia</div>
+        </div>
+      </div>
+
+      <section class="artist-meta" aria-labelledby="tentang-artis">
+        <h4 id="tentang-artis">Tentang artis</h4>
+        <p class="small">Barasuara dikenal karena energi panggung dan lirik yang intens — sering menjadi pilihan untuk suasana kalcer alternatif.</p>
+
+        <h4 style="margin-top:12px">Lagu populer</h4>
+        <ol class="small" style="padding-left:0;list-style:none">
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)">Peluru</li>
+          <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)">Matahari</li>
+          <li style="padding:8px 0">Bara</li>
+        </ol>
+      </section>
+    </aside>
+
+    <!-- FOOTER PLAYER -->
+    <div class="player" role="region" aria-label="Player">
+      <div class="now-playing" aria-live="polite">
+        <div class="thumb" aria-hidden="true">
+          <img src="assets/img/peradaban.jpeg" alt="Peluru thumbnail" style="width:56px;height:56px;border-radius:6px;object-fit:cover">
+        </div>
+
+        <div>
+          <div style="font-weight:600">Politrik</div>
+          <div class="small">.Feast</div>
+        </div>
+      </div>
+
+      <div class="controls" aria-hidden="true">
+        <button title="Shuffle">⤨</button>
+        <button title="Prev">⏮</button>
+        <button title="Play/Pause" style="font-size:20px">⏯</button>
+        <button title="Next">⏭</button>
+        <button title="Repeat">🔁</button>
+      </div>
+
+      <div class="progress" aria-hidden="true">
+        <div class="small">2:09</div>
+        <div class="seek" aria-hidden="true"><i></i></div>
+        <div class="small">4:54</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
