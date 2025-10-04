@@ -1,9 +1,18 @@
+<?php
+session_start();
+
+// Jika belum login, redirect ke login
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php?msg=belum_login");
+    exit();
+}
+?>
 <!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MelodyHub — Single Page</title>
+  <title>MelodyHub</title>
 
   <!-- CSS terpisah -->
   <link rel="stylesheet" href="css/style.css">
