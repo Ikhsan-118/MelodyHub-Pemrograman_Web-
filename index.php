@@ -1,20 +1,12 @@
 <?php
-// Redirect to login page immediately
-// Note: ensure no output is sent before these headers.
-header("Location: login.php");
-exit();
-?>
+session_start();
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="refresh" content="0;url=login.php">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Redirecting…</title>
-</head>
-<body>
-	<p>If you are not redirected automatically, <a href="login.php">click here to go to the login page</a>.</p>
-</body>
-</html>
-
+// Jika sudah login arahkan ke dashboard
+if (isset($_SESSION['username'])) {
+    header("Location: dashboard.php");
+    exit();
+} else {
+    // Jika belum login arahkan ke login
+    header("Location: login.php");
+    exit();
+}
